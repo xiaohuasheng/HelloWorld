@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>常用链接</title>
+</head>
+<body>
+<form action="/add-link" method="post">
+    {% csrf_token %}
+    <div>
+        URL
+        <input type="text" name="url">
+    </div>
+    <div>
+        描述
+        <input type="text" name="description">
+    </div>
+    <input type="submit" value="Submit">
+</form>
+
+<p>{{ rlt }}</p>
+<div>
+    {% for item in url_list %}
+        <p><a href="/link/{{ item.id }}" target="_blank">{{ item.description }}</a></p>
+    {% endfor %}
+</div>
+
+</body>
+</html>
