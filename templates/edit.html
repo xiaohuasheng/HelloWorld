@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>链接编辑</title>
+</head>
+<body style="
+    margin-left: 30%;
+">
+<form action="/edit/{{ link_obj.id }}" method="post">
+    {% csrf_token %}
+    <div>
+        URL
+        <input type="text" name="url" value="{{ link_obj.url }}">
+    </div>
+    <div>
+        描述
+        <input type="text" name="description" value="{{ link_obj.description }}">
+    </div>
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>

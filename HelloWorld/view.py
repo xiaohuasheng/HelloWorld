@@ -37,6 +37,16 @@ def delete_link(request, link_id):
     return HttpResponse("%s删除成功" % link_id)
 
 
+def edit(request, link_id):
+    link_obj = Test.objects.get(id=link_id)
+    if request.POST:
+        link_obj.url = request.POST['url']
+        link_obj.description = request.POST['description']
+        link_obj.save()
+        return redirect("/")
+    return render(request, "edit.html", {"link_obj": link_obj})
+
+
 def add_link(request):
     ctx = {}
     link_list = Test.objects.all().order_by('-click')

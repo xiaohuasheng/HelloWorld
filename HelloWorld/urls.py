@@ -9,4 +9,6 @@ urlpatterns = [
     url(r'^add-link$', view.add_link),
     url(r'^link/(?P<link_id>\d+)$', view.link),
     url(r'^delete/(?P<link_id>\d+)$', view.delete_link),
+    url(r'^edit/(?P<link_id>\d+)$', view.edit),
+    url(r'^$', view.add_link),
 ]

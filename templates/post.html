@@ -4,7 +4,9 @@
     <meta charset="utf-8">
     <title>常用链接</title>
 </head>
-<body>
+<body style="
+    margin-left: 30%;
+">
 <form action="/add-link" method="post">
     {% csrf_token %}
     <div>
@@ -21,7 +23,8 @@
 <p>{{ rlt }}</p>
 <div>
     {% for item in url_list %}
-        <p><a href="/link/{{ item.id }}" target="_blank">{{ item.description }}</a></p>
+        <p><a href="/link/{{ item.id }}" target="_blank">{{ item.description }}</a>
+            <a style="margin-left: 2%" href="/edit/{{ item.id }}" target="_blank">编辑</a></p>
     {% endfor %}
 </div>
 
