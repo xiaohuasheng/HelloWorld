@@ -1,4 +1,5 @@
 # HelloWorld
+```
 django-admin startproject HelloWorld
 cd HelloWorld/
 ls
@@ -11,7 +12,7 @@ vim HelloWorld/settings.py
 python3 manage.py migrate
 python3 manage.py makemigrations TestModel
 python3 manage.py migrate TestModel
-
+```
 # 模板
 模板路径
 settings.py  
